@@ -1,0 +1,814 @@
+{
+  "agent_id": "",
+  "channel": "voice",
+  "last_modification_timestamp": 1765524230133,
+  "agent_name": "Finance agent",
+  "response_engine": {
+    "type": "conversation-flow",
+    "version": 0,
+    "conversation_flow_id": "conversation_flow_23d844ec08f0"
+  },
+  "language": "en-US",
+  "data_storage_setting": "everything",
+  "opt_in_signed_url": false,
+  "version": 0,
+  "is_published": false,
+  "post_call_analysis_model": "gpt-4.1-mini",
+  "pii_config": {
+    "mode": "post_call",
+    "categories": []
+  },
+  "voice_id": "11labs-Adrian",
+  "user_dtmf_options": {},
+  "conversationFlow": {
+    "conversation_flow_id": "conversation_flow_23d844ec08f0",
+    "version": 0,
+    "global_prompt": "You are a professional, friendly voice agent designed to assist users with loan-related services. Your role is to understand the user’s intent, guide them through checking their loan offer, calculating EMI, applying for a loan, or arranging a callback, and smoothly transition between these options based on their responses. Always respond clearly, keep interactions short and helpful, confirm the user’s choices before proceeding, and ask for clarification when needed. Your goal is to make the loan assistance process simple, accurate, and easy for the user.",
+    "nodes": [
+      {
+        "instruction": {
+          "type": "static_text",
+          "text": "Helloo! This is Twice, your loan assistance agent. To get started, may I know who I am speaking with?"
+        },
+        "name": "Welcome Node",
+        "edges": [
+          {
+            "destination_node_id": "node-1765189831994",
+            "id": "edge-1",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "User replies\n"
+            }
+          },
+          {
+            "destination_node_id": "node-1765189892071",
+            "id": "edge-1765210211684-32zcirnd4",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "No"
+            }
+          }
+        ],
+        "start_speaker": "agent",
+        "id": "start-node-1765087396720",
+        "type": "conversation",
+        "display_position": {
+          "x": 550,
+          "y": 30
+        }
+      },
+      {
+        "name": "End Call",
+        "id": "end-call-node-1765087396720",
+        "type": "end",
+        "display_position": {
+          "x": 3566.038440923687,
+          "y": 903.9346937897866
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Politely end the call"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210367515",
+            "id": "edge-1765189831994-bcz3hkj4v",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "User replies with a four digit number"
+            }
+          }
+        ],
+        "id": "node-1765189831994",
+        "type": "conversation",
+        "display_position": {
+          "x": 903.0769230769231,
+          "y": 25.384615384615394
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "To verify the identity of the person you may ask for the last four digit of his aadhar card or phone number(KYC Processs)"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765189831994",
+            "id": "edge-1765189892071-6xxfzpsb2",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Describe the transition condition"
+            }
+          }
+        ],
+        "id": "node-1765189892071",
+        "type": "conversation",
+        "display_position": {
+          "x": 895.3846153846155,
+          "y": 336.1538461538462
+        },
+        "instruction": {
+          "type": "static_text",
+          "text": "Sorry, I didn’t get your name. Could you please repeat it?"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210593767",
+            "id": "edge-1765210367515-mhrprq031",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "wants to talk about loans"
+            }
+          },
+          {
+            "destination_node_id": "node-1765210489418",
+            "id": "edge-1765210457088-vnlb4945y",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "none"
+            }
+          },
+          {
+            "destination_node_id": "node-1765210961601",
+            "id": "edge-1765210749903-p2hv220zo",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "pre approved loan"
+            }
+          }
+        ],
+        "id": "node-1765210367515",
+        "type": "conversation",
+        "display_position": {
+          "x": 1282.3076923076922,
+          "y": -24.615384615384613
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Great the verification is complete. Would you like to talk about the new loan or about the preapproved loan"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "id": "edge-1765210489418-7tku60umy",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Describe the transition condition"
+            }
+          }
+        ],
+        "id": "node-1765210489418",
+        "type": "conversation",
+        "display_position": {
+          "x": 1674.9910449044912,
+          "y": 180.34060334400954
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Talk about the other stuffs like EMI and underwriting and credit card offers or ask if he wants to reschedule the call"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765211629896",
+            "id": "edge-1765211582268-xc27ygogy",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Car loan"
+            }
+          },
+          {
+            "destination_node_id": "node-1765211645296",
+            "id": "edge-1765211583630-8gz3bxfft",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "house loan"
+            }
+          },
+          {
+            "destination_node_id": "node-1765211649350",
+            "id": "edge-1765211584800-wgnxmr6th",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "personal loan"
+            }
+          }
+        ],
+        "id": "node-1765210593767",
+        "type": "conversation",
+        "display_position": {
+          "x": 1653.8461538461538,
+          "y": -220.19230769230762
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Mention there are many loan but we noticed you were looking into personal loan would you like you know more about it (make the convo compact)"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210817374",
+            "id": "edge-1765210639092-bwd9dl1sq",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Wants to tall about the loan"
+            }
+          },
+          {
+            "destination_node_id": "node-1765211836368",
+            "id": "edge-1765211776484-2f7djr6f1",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Wants to talk about the credit card "
+            }
+          }
+        ],
+        "id": "node-1765210639092",
+        "type": "conversation",
+        "display_position": {
+          "x": 2725.4943534488534,
+          "y": 70.85802525179743
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Also talk about the credit card offers, which comes along with the loans. make it short"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210854232",
+            "id": "edge-1765210817374-5stq7nglc",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies "
+            }
+          }
+        ],
+        "id": "node-1765210817374",
+        "type": "conversation",
+        "display_position": {
+          "x": 3081.2368871815765,
+          "y": -78.91612459192247
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Help the customer with the specific loan he is interested in and tell that you sms him the details"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765724972215",
+            "id": "edge-1765210854232-iqkql9cqe",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies"
+            }
+          }
+        ],
+        "id": "node-1765210854232",
+        "type": "conversation",
+        "display_position": {
+          "x": 3620.5224187102394,
+          "y": 221.42381974524034
+        },
+        "instruction": {
+          "type": "static_text",
+          "text": "sure let me schedule a call with the customer care manager, what date and time do you prefer. "
+        }
+      },
+      {
+        "custom_sip_headers": {},
+        "transfer_destination": {
+          "type": "predefined",
+          "number": "+916382008282"
+        },
+        "edge": {
+          "destination_node_id": "end-call-node-1765087396720",
+          "id": "edge-1765210891013-sv6tcvoie",
+          "transition_condition": {
+            "type": "prompt",
+            "prompt": "Transfer failed"
+          }
+        },
+        "name": "Transfer Call",
+        "ignore_e164_validation": false,
+        "id": "node-1765210891013",
+        "transfer_option": {
+          "cold_transfer_mode": "sip_invite",
+          "enable_bridge_audio_cue": true,
+          "type": "cold_transfer",
+          "show_transferee_as_caller": false
+        },
+        "type": "transfer_call",
+        "speak_during_execution": false,
+        "display_position": {
+          "x": 3610.691441082886,
+          "y": 587.8578738853477
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765211152720",
+            "id": "edge-1765210961601-6wmco6ckt",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies"
+            }
+          }
+        ],
+        "id": "node-1765210961601",
+        "type": "conversation",
+        "display_position": {
+          "x": 1552.000320632786,
+          "y": 848.1869070633943
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Help the person with his approved loan questions offers and tell him how he can reduce it to 11% and tell you'll send the complete information in whatsapp."
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765211200762",
+            "id": "edge-1765211152720-hs252rcig",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies "
+            }
+          }
+        ],
+        "id": "node-1765211152720",
+        "type": "conversation",
+        "display_position": {
+          "x": 2007.2625919427246,
+          "y": 869.1818553100898
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "I can schedule a meeting with bank employee if you would like to talk about this "
+        }
+      },
+      {
+        "custom_sip_headers": {},
+        "transfer_destination": {
+          "type": "predefined",
+          "number": "+916382008282"
+        },
+        "edge": {
+          "destination_node_id": "end-call-node-1765087396720",
+          "id": "edge-1765211200762-v8ymg9whl",
+          "transition_condition": {
+            "type": "prompt",
+            "prompt": "Transfer failed"
+          }
+        },
+        "name": "Transfer Call",
+        "ignore_e164_validation": false,
+        "id": "node-1765211200762",
+        "transfer_option": {
+          "cold_transfer_mode": "sip_invite",
+          "enable_bridge_audio_cue": true,
+          "type": "cold_transfer",
+          "show_transferee_as_caller": false
+        },
+        "type": "transfer_call",
+        "speak_during_execution": false,
+        "display_position": {
+          "x": 2434.28533289981,
+          "y": 1292.405159973524
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210639092",
+            "id": "edge-1765211629896-qr7dno686",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "User replies"
+            }
+          }
+        ],
+        "id": "node-1765211629896",
+        "type": "conversation",
+        "display_position": {
+          "x": 2219.633810668823,
+          "y": -240.00511719743352
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Talk about car loan and then ask if he clear about it "
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210639092",
+            "id": "edge-1765211645296-f2t4yc6y5",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "User replies"
+            }
+          }
+        ],
+        "id": "node-1765211645296",
+        "type": "conversation",
+        "display_position": {
+          "x": 2208.9193421974865,
+          "y": 47.313707086015555
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Talk about house loan and then ask if he clear about it "
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210639092",
+            "id": "edge-1765211649350-53ejff8k2",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Talks about other offers "
+            }
+          },
+          {
+            "destination_node_id": "node-1765221472928",
+            "id": "edge-1765221502507-yl4hpieh1",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "not convinced that the personal loan is useful"
+            }
+          }
+        ],
+        "id": "node-1765211649350",
+        "type": "conversation",
+        "display_position": {
+          "x": 2195.484366326191,
+          "y": 400.6516569283412
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Talk about personal loan and then ask if he clear about it.(small explanation is enough)"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210854232",
+            "id": "edge-1765211836368-ob5sz0ocs",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "User replies"
+            }
+          }
+        ],
+        "id": "node-1765211836368",
+        "type": "conversation",
+        "display_position": {
+          "x": 3086.594121417245,
+          "y": 240.8809322452666
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Help the customer with the credit card offer he is interested in and tell that you sms him the details"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210639092",
+            "id": "edge-1765221472928-6rkm84w9q",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies"
+            }
+          }
+        ],
+        "id": "node-1765221472928",
+        "type": "conversation",
+        "display_position": {
+          "x": 2590.505247428563,
+          "y": 827.8980114684563
+        },
+        "instruction": {
+          "type": "static_text",
+          "text": "Totally fair most people hesitate at this stage. That’s exactly why this offer makes sense: it’s pre-approved based on your profile, requires minimal paperwork, and lets you get the funds quickly without disrupting your monthly budget. You’re not committing yet you’re simply checking an option that could give you financial flexibility right when you need it"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765530279031",
+            "id": "edge-1765530221373-ztbuamau7",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies"
+            }
+          }
+        ],
+        "id": "node-1765530221373",
+        "type": "conversation",
+        "display_position": {
+          "x": 223.29546311773578,
+          "y": -560.3746159342049
+        },
+        "instruction": {
+          "type": "static_text",
+          "text": "Hi, am I speaking with Lakshan?"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765530282005",
+            "id": "edge-1765530279031-v6hpf7qk4",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies"
+            }
+          }
+        ],
+        "id": "node-1765530279031",
+        "type": "conversation",
+        "display_position": {
+          "x": 628.6142393290154,
+          "y": -535.4072575260782
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "this is the Twice AI assistant from Tata Capital. I’m calling because our system flagged that you are currently paying 18.5% interest on your personal loan, dont talk about the whatsapp here"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765530294040",
+            "id": "edge-1765530282005-9wp4cxt6b",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies"
+            }
+          }
+        ],
+        "id": "node-1765530282005",
+        "type": "conversation",
+        "display_position": {
+          "x": 1075.9421147342366,
+          "y": -660.8942688102226
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "We can bring that down significantly. I have generated a pre-approved offer for you at 11% interest."
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765530512708",
+            "id": "edge-1765530294040-ngw3opohi",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies"
+            }
+          }
+        ],
+        "id": "node-1765530294040",
+        "type": "conversation",
+        "display_position": {
+          "x": 1497.5758444371988,
+          "y": -780.6526296767709
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "first let m verify my aadhar last four digits.()"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765530576098",
+            "id": "edge-1765530512708-vryhzbgjq",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies"
+            }
+          }
+        ],
+        "id": "node-1765530512708",
+        "type": "conversation",
+        "display_position": {
+          "x": 2343.404973894904,
+          "y": -872.4359337332291
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Great the verification is complete.The  pre-approved offer that I mentioned has 11% interest, which will save you approximately ₹23,000 in total interest starting next month ."
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765530680795",
+            "id": "edge-1765530576098-tyovtp7sh",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "interested to call or meet"
+            }
+          },
+          {
+            "destination_node_id": "node-1765530684009",
+            "id": "edge-1765530639548-lyyczl3hr",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "no interested in call or meet"
+            }
+          }
+        ],
+        "id": "node-1765530576098",
+        "type": "conversation",
+        "display_position": {
+          "x": 2857.2328899419285,
+          "y": -846.6687521025523
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "I have not booked it yet. I’ve sent a secure link to your WhatsApp right now. You can click it to adjust your tenure and see the new EMI on your screen. Shall I keep the link active for the next 15 minutes? or ask if he wants to schedule a meet or call with one of our employee."
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765530759530",
+            "id": "edge-1765530680795-1d05tdo1f",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Describe the transition condition"
+            }
+          }
+        ],
+        "id": "node-1765530680795",
+        "type": "conversation",
+        "display_position": {
+          "x": 3246.7720475351007,
+          "y": -901.2345484969267
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "sure tell me the time and date an i'll book the meet/call"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765530759530",
+            "id": "edge-1765530684009-bw0kk7gzr",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "Describe the transition condition"
+            }
+          }
+        ],
+        "id": "node-1765530684009",
+        "type": "conversation",
+        "display_position": {
+          "x": 3277.086378865309,
+          "y": -531.3997062683895
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "alright the docs are sent , you can call me if you have any queries or any other doubts."
+        }
+      },
+      {
+        "name": "End Call",
+        "id": "node-1765530759530",
+        "type": "end",
+        "speak_during_execution": true,
+        "display_position": {
+          "x": 3640.8583548278043,
+          "y": -720.8642770821893
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Politely end the call"
+        }
+      },
+      {
+        "name": "Conversation",
+        "edges": [
+          {
+            "destination_node_id": "node-1765210891013",
+            "id": "edge-1765724972215-w5ngqvtbu",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "user replies"
+            }
+          }
+        ],
+        "id": "node-1765724972215",
+        "type": "conversation",
+        "display_position": {
+          "x": 3985.1453683406926,
+          "y": 260.1134132122493
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "cool the schedule is set , thank you I'll transfer you to my customer care manager"
+        }
+      }
+    ],
+    "components": [
+      {
+        "name": "Component L1",
+        "start_node_id": "conversation-1765279377380",
+        "conversation_flow_component_id": "cf-component-1765279377377",
+        "nodes": [
+          {
+            "name": "Conversation",
+            "edges": [],
+            "id": "conversation-1765279377380",
+            "type": "conversation",
+            "display_position": {
+              "x": 200,
+              "y": 100
+            },
+            "instruction": {
+              "type": "prompt",
+              "text": "Describe what the AI should say or do"
+            }
+          },
+          {
+            "name": "Exit Component",
+            "id": "component-end-1765279377380",
+            "type": "end",
+            "speak_during_execution": false,
+            "display_position": {
+              "x": 600,
+              "y": 100
+            },
+            "instruction": {
+              "type": "static_text",
+              "text": "Component completed"
+            }
+          }
+        ],
+        "user_modified_timestamp": 1765279377380,
+        "tools": []
+      }
+    ],
+    "start_node_id": "start-node-1765087396720",
+    "start_speaker": "agent",
+    "model_choice": {
+      "type": "cascading",
+      "model": "gpt-5.1",
+      "high_priority": false
+    },
+    "tool_call_strict_mode": true,
+    "knowledge_base_ids": [],
+    "kb_config": {
+      "top_k": 3,
+      "filter_score": 0.6
+    },
+    "begin_tag_display_position": {
+      "x": 255.82586042992006,
+      "y": 107.73239414808825
+    },
+    "is_published": false,
+    "flex_mode": false
+  }
+}
