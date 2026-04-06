@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tata Capital Voice Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- Ambient Background Layer -->
+  <div class="ambient-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <header>
+    <h1>Tata Capital Voice Assistant</h1>
+  </header>
+
+  <div class="stage">
+    <div class="sphere-wrapper" id="sphereWrapper">
+      <div class="sphere" id="orb"></div>
+      <!-- Dynamic ripples will be appended here via JS -->
+    </div>
+
+    <div class="visualizer" id="visualizer">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+
+  <div class="subtitle-container">
+    <p class="subtitle" id="status-text"><span class="highlight-success">Click</span> to start conversation</p>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
